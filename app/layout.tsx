@@ -4,7 +4,7 @@ import "./globals.css";
 
 const geistSans = Press_Start_2P({
   weight: ["400"],
-  subsets: [`latin`, `latin-ext`]
+  subsets: ['latin','latin-ext']
 });
 
 
