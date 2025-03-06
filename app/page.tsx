@@ -7,9 +7,9 @@ type MyDataType = {
   level: number,
   stream: string;
   trophies: number,
-  user_name:string;
-  user_email:string;
-  user_phone:string;
+  user_name: string;
+  user_email: string;
+  user_phone: string;
   year: number;
 }
 
@@ -23,7 +23,7 @@ export default async function Home() {
 
   async function getMyCollection() {
     try {
-      const data:MyDataType[] = await getAllDocuments<MyDataType>('myCollection') as MyDataType[];
+      const data: MyDataType[] = await getAllDocuments<MyDataType>('myCollection') as MyDataType[];
       return data;
     } catch (error: any) {
       console.error('Error fetching documents:', error);
@@ -66,7 +66,7 @@ export default async function Home() {
         aria-hidden
         src="/leaderboardTitle.png"
         alt="File icon"
-        className="w-auto sm:hidden flex h-12"
+        className="w-auto sm:flex hidden h-12"
         width={100}
         height={100}
       />
@@ -86,7 +86,7 @@ export default async function Home() {
           {data.map((row, index) => (
             <li key={index} className="flex justify-between gap-2 items-center p-4 bg-gray-800 rounded-lg">
               <span className="text-yellow-400 font-bold">{index + 1}</span>
-              <span className="text-white text-center">{row?.user_name+", "+row?.stream+", "+(row?.college.length > 20 ? row?.college.substring(0,18): row?.college)}</span>
+              <span className="text-white text-center">{row?.user_name + ", " + row?.stream + ", " + (row?.college.length > 20 ? row?.college.substring(0, 18) : row?.college)}</span>
               <span className="text-yellow-400 font-bold">{row.trophies}</span>
             </li>
           ))}
