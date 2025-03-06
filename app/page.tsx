@@ -13,6 +13,7 @@ type MyDataType = {
   year: number;
 }
 
+export const dynamic = "force-dynamic"
 export default async function Home() {
   async function getAllDocuments<T>(collectionName: string): Promise<T[]> {
     const q = query(collection(db, collectionName), orderBy('trophies', 'desc'));
